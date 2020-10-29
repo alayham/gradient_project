@@ -1,0 +1,49 @@
+{
+    "name": "alayham/gradient_project",
+    "description": "Project template for the gradient server install profile",
+    "type": "project",
+    "license": "GPL-2.0-or-later",
+    "homepage": "https://www.alayham.com",
+    "repositories": {
+        "gradient" : {
+            "type": "vcs",
+            "url": "git@github.com:alayham/gradient_server.git"
+        },
+        "drupal": {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        }
+    },
+    "require": {
+        "composer/installers": "^1.9",
+        "drupal/core-composer-scaffold": "^9",
+        "drupal/core-recommended": "^9",
+        "drupal/gradient_server": "~1",
+        "drush/drush": "^10.3"
+    },
+    "conflict": {
+        "drupal/drupal": "*"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "drupal-scaffold": {
+            "locations": {
+                "web-root": "web/"
+            }
+        },
+        "installer-paths": {
+            "web/core": ["type:drupal-core"],
+            "web/libraries/{$name}": ["type:drupal-library"],
+            "web/modules/contrib/{$name}": ["type:drupal-module"],
+            "web/profiles/contrib/{$name}": ["type:drupal-profile"],
+            "web/themes/contrib/{$name}": ["type:drupal-theme"],
+            "drush/Commands/contrib/{$name}": ["type:drupal-drush"],
+            "web/modules/custom/{$name}": ["type:drupal-custom-module"],
+            "web/themes/custom/{$name}": ["type:drupal-custom-theme"]
+        }
+    }
+}
