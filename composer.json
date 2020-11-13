@@ -12,14 +12,29 @@
         "drupal": {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        "bootstrap": {
+            "type": "package",
+            "package": {
+                "name": "twbs/bootstrap",
+                "type": "drupal-library",
+                "version": "4.5.3",
+                "dist": {
+                    "type": "zip",
+                    "url": "https://github.com/twbs/bootstrap/releases/download/v4.5.3/bootstrap-4.5.3-dist.zip"
+                }
+            }
         }
     },
     "require": {
         "composer/installers": "^1.9",
+        "drupal/config_update": "^1.7",
         "drupal/core-composer-scaffold": "^9",
         "drupal/core-recommended": "^9",
+        "drupal/filefield_sources": "^1.0@alpha",
         "drupal/gradient_server": "~1",
-        "drush/drush": "^10.3"
+        "drush/drush": "^10.3",
+        "twbs/bootstrap": "^4.5"
     },
     "conflict": {
         "drupal/drupal": "*"
