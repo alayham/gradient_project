@@ -28,6 +28,7 @@
     },
     "require": {
         "composer/installers": "^1.9",
+        "cweagans/composer-patches": "^1.7",
         "drupal/config_update": "^1.7",
         "drupal/core-composer-scaffold": "^9",
         "drupal/core-recommended": "^9",
@@ -59,6 +60,11 @@
             "drush/Commands/contrib/{$name}": ["type:drupal-drush"],
             "web/modules/custom/{$name}": ["type:drupal-custom-module"],
             "web/themes/custom/{$name}": ["type:drupal-custom-theme"]
+        },
+        "patches": {
+            "drupal/contact_storage": {
+              "fix contact storage installation": "https://www.drupal.org/files/issues/2020-09-28/3053497-8.patch"
+            }
         }
     }
 }
