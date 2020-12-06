@@ -33,10 +33,8 @@ RUN set -eux; \
 		pdo_pgsql \
 		zip \
 	; \
-	pecl install solr; \
-	docker-php-ext-enable solr; \
-	pecl install redis; \
-	docker-php-ext-enable redis; \
+	pecl install solr redis apcu uploadprogress; \
+	docker-php-ext-enable solr redis apcu uploadprogress; \
 	\
 # reset apt-mark's "manual" list so that "purge --auto-remove" will remove all build dependencies
 	apt-mark auto '.*' > /dev/null; \
