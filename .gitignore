@@ -1,6 +1,8 @@
 config/
 vendor/
 web/
+solr-data/
 .editorconfig
 .gitattributes
 composer.lock
+config.zip
