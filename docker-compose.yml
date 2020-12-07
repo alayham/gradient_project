@@ -28,14 +28,17 @@ services:
       - ./:/var/www/html
 
   solr:
-    image: solr:latest
+    image: geerlingguy/solr:latest
     container_name: solr
     ports:
       - 8983:8983
     networks:
       - external
     restart: unless-stopped
-  
+    volumes:
+      - ./solr-data:/var/solr/data/gradient_core
+    command: ["/opt/solr/bin/solr", "start", "-p", "8983", "-f", "-force"]  
+
   redis:
     image: redis:latest
     container_name: redis
