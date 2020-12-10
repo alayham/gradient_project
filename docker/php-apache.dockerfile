@@ -63,7 +63,7 @@ RUN { \
 # https://github.com/drupal/drupal/blob/9.0.1/composer.lock#L4052-L4053
 COPY --from=composer:latest /usr/bin/composer /usr/local/bin/
 
-RUN apt-get update && apt-get install -y mariadb-client git patch
+RUN apt-get update && apt-get install -y mariadb-client git patch unzip
 RUN sed -ie "s/html/html\/web/" /etc/apache2/sites-available/000-default.conf
 WORKDIR /var/www/html
 
