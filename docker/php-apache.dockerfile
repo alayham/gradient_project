@@ -32,6 +32,8 @@ RUN set -eux; \
 		pdo_mysql \
 		pdo_pgsql \
 		zip \
+		dom \
+		xml \
 	; \
 	pecl install solr redis apcu uploadprogress; \
 	docker-php-ext-enable solr redis apcu uploadprogress; \
